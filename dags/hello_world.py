@@ -4,10 +4,10 @@ from airflow.operators.bash_operator import BashOperator
 
 DEFAULT_ARGS = {"owner" : "theflow",
 		"depends_on_past" : False,
-		"start_date" : datetime(2017,05,26,16,00),
+		"start_date" : datetime(2017,05,26,16,30),
 		"retries" : 1,
 		"retry_delay" : timedelta(minutes=1)}
-SCHEDULE_INTERVAL = timedelta(minutes=30)
+SCHEDULE_INTERVAL = "@once"
 
 dag = DAG("hello_world",
 	  default_args=DEFAULT_ARGS,
